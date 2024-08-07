@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",  // This should match the "preLaunchTask" in your launch.json
+            "type": "shell",
+            "command": "cmake --build ${workspaceFolder}/my_project/build",  // Adjust this command according to your project structure
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build_debug",  // This should match the "preLaunchTask" in your launch.json
+            "type": "shell",
+            "command": "cmake -DCMAKE_BUILD_TYPE=Debug -S ${workspaceFolder}/my_project -B ${workspaceFolder}/my_project/build && cmake --build ${workspaceFolder}/my_project/build",  // Adjust this command according to your project structure
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "${workspaceFolder}/my_project/build/helloworld",  // Replace with the path to your executable
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": "build"
+        }
+    ]
+}

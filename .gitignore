@@ -1,0 +1,6 @@
+vio/build/*
+vio/data/*
+ceres-bin/*
+feature_extraction/*
+my_project/*
+ANMS-Codes/*
